@@ -1,0 +1,25 @@
+{
+  "name": "silex",
+  "version": "1.0.0",
+  "description": "Silex Integration",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ocularminds/silex.git"
+  },
+  "author": "Festus B Jejelowo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ocularminds/silex/issues"
+  },
+  "homepage": "https://github.com/ocularminds/silex#readme",
+  "dependencies": {
+    "@saleae/ffi": "^3.0.2",
+    "@saleae/ref": "^2.0.1",
+    "@saleae/ref-array": "^2.0.1",
+    "@saleae/ref-struct": "^2.0.1"
+  }
+}
