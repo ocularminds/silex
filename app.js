@@ -39,8 +39,8 @@ events.on("search", () => {
     lpdwReturned
   );
   console.log("SxuptpEnumDeviceServers -> " + response);
-  console.log("total bytes -> " + lpdwReaded,);
-  console.log("servers found -> " + lpdwReturned);
+  console.log("total bytes -> " + ref.deref(lpdwReaded).toString());
+  console.log("servers found -> " + ref.deref(lpdwReturned).toString());
 });
 
 events.emit("search");
