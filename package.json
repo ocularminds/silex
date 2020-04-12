@@ -20,6 +20,7 @@
     "@saleae/ffi": "^3.0.2",
     "@saleae/ref": "^2.0.1",
     "@saleae/ref-array": "^2.0.1",
-    "@saleae/ref-struct": "^2.0.1"
+    "@saleae/ref-struct": "^2.0.1",
+    "ipaddr.js": "^1.9.1"
   }
 }

@@ -1,5 +1,6 @@
 var ref = require("@saleae/ref");
 var arrayType = require("@saleae/ref-array");
+const ipaddr = require('ipaddr.js');
 const models = require("./models");
 const types = require("./types");
 const Silex = require("./silex");
@@ -26,7 +27,8 @@ LPDWORD lpdwReturned /* Parameter’s address to which the number of structure
 copied will be returned*/
 events.on("search", () => {
   var dwCount = 0;
-  var bufferSize = models.SXPSERVER.size * Values.MAX_PSERVER;
+  var sSize = models.SXPSERVER.size
+  var bufferSize = sSize * Values.MAX_PSERVER;
   var svrPtr = ref.refType(models.SXPSERVER);
   var svrPtrArray = arrayType(svrPtr);
 
@@ -50,7 +52,9 @@ events.on("search", () => {
 
   if (returnedSize > 0) {
     for (var x = 0; x < returnedSize; x++) {
-      var server = ref.get(servers.buffer, x, models.SXPSERVER); //.deref();
+      var server = ref.get(lpbServers.buffer, x * sSize, models.SXPSERVER);
+      var szIp = ipaddr.fromByteArray(server.dwIp).toString()
+      var szMac = Buffer.from(server.bNodeaddr).get().toString(16)
       console.log(
         "%s (%s / %s / %s)",
         server.szMachineType,
@@ -112,5 +116,3 @@ events.on("connect", (dwIpaddr) => {
 });
 
 events.emit("search");
-events.emit("devices", ref.NULL)
-events.emit("connect", ref.NULL)
