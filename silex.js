@@ -10,7 +10,7 @@ const Silex = new ffi.Library("Sxuptp", {
   SxuptpEnumDeviceServers: [
     "int",
     [types.LPDWORD, "int", types.LPVOID, "int", types.LPDWORD, types.LPDWORD],
-  ],/*
+  ],
   SxuptpEnumDevices: [
     "int",
     ["int", types.LPVOID, "int", types.LPDWORD, types.LPDWORD],
@@ -20,7 +20,7 @@ const Silex = new ffi.Library("Sxuptp", {
   SxuptpDeviceConnectEx2: [
     "int",
     ["int", types.LPBYTE, LPSXUSBDEVICE, "int", types.LPVOID],
-  ],
+  ],/*
   SxuptpDeviceDisconnect: ["int", ["int", types.LPBYTE, types.LPSTR]],
   SxuptpDeviceDisconnectEx: ["int", ["int", types.LPBYTE, LPSXUSBDEVICE]],
   SxuptpGetDeviceServerInfo: ["int", ["int", types.LPVOID, "int"]],
