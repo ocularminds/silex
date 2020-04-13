@@ -18,3 +18,5 @@ const commons = {
     );
   },
 };
+
+module.exports = commons;
